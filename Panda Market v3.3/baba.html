@@ -1,0 +1,114 @@
+<!--
+    Notas de version; Panda Market v2.3
+    -Carrucel de imagenes (nuevos anuncios)
+    -rediseno del nav
+    -rediseno del footer
+    -ofertas destacadas para mayor visibilidad
+    -nuevo logo (probablemente se quite)
+    -algunos cambios pequenos en el diseno de las letras
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda Market</title> <!--Nombre de la pagina-->
+    <link rel="stylesheet" href="Styles/Style.css"> <!--Conexion con CSS-->
+    <link rel="shortcut icon" href="images/IconoPagina.png"> <!--Imagen de la pagina-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="lineal"> <!--Lo de arriba-->
+        <h1 class="derecha"> 
+            <div>
+                <b>
+                    <p style="white-space: nowrap;">
+                        <span>
+                        <a href="Index.html"><img src="images/pandapro.png" alt="logo" width="80" height="80">Panda Market</a>
+                        <input placeholder="Search" type="search" class="input">
+                        <a href="#"><img src="images/carroblanco.png" alt="" width="30" height="30" class="arriba"></a>
+                    </p> 
+                </b>
+            </div>
+        </h1>
+    </header>
+    
+    <nav> <!--Redireccionar a otras paginas-->
+        <a class="buy2" href="#">Categorias</a>
+        <a class="buy2" href="#">Ofertas</a>
+        <p class="hola">Hola usuario 🐼</p>
+    </nav>
+
+    <div class="container">
+
+        <!--Carrucel-->
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="images/Anuncio.png" alt="Anuncio 1">
+                <img src="images/Anuncio2.png" alt="Anuncio 2">
+                <img src="images/Anuncio3.png" alt="Anuncio 3">
+                <img src="images/Anuncio4.png" alt="Anuncio 4">
+            </div>
+            <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+        <script src="JavaScript/carrucel.js"></script>
+
+        <div class="category">
+            <h3>Frutas y Verduras</h3><br><br><br>
+            <div class="productos">
+                <div class="producto"><p class="of">Oferta</p><br><img src="images/palta.png" alt=""><br>Palta<br>$5000(KG) <s class="gris">$6000</s><br><br><button class="buy"><a href="html/palta.html">Agregar</a></button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><img src="images/platano.png" alt=""><br>Plátano<br>$2500 (KG)<br><br><button class="buy"><a href="html/platano.html">Agregar</a></button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><img src="images/tomate.png" alt=""><br>Tomate<br>$2000 (KG)<br><br><button class="buy">Agregar</button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><img src="images/manzana.png" alt=""><br>Manzana<br>$1000 (KG)<br><br><button class="buy">Agregar</button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><img src="images/kiwi.png" alt=""><br>Kiwi<br>$1500 (KG)<br><br><button class="buy">Agregar</button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><img src="images/zeta.png" alt=""><br>Champiñón<br>$2450 (KG)<br><br><button class="buy">Agregar</button></div>
+            </div>
+            <br><p>Las más frescas, directamente del campo a tu mesa.</p>
+        </div>
+
+        <div class="category">
+            <h3>Productos de limpieza</h3><br><br><br>
+            <div class="productos">
+                <div class="producto"><p class="nada">Oferta</p><br><img src="images/cif.png" alt=""><br>Cif<br>$1000 (un)<br><br><button class="buy"><a href="palta.html">Agregar</a></button></div>
+                <div class="producto"><p class="of">Oferta</p><br><img src="images/confort.png" alt=""><br>Confort<br>$1900 (un) <s class="gris">$2500</s><br><br><button class="buy"><a href="platano.html">Agregar</a></button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><img src="images/quix.png" alt=""><br>Quix<br>$2000 (un)<br><br><button class="buy">Agregar</button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><img src="images/bolsabasura.png" alt=""><br>Bolsa de Basura<br>$1000 (un)<br><br><button class="buy">Agregar</button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><img src="images/lysoform.png" alt=""><br>Lysoform<br>$1500 (un)<br><br><button class="buy">Agregar</button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><img src="images/clorox.png" alt=""><br>Cloro<br>$2450 (un)<br><br><button class="buy">Agregar</button></div>
+            </div>
+            <br><p>Mantén tu hogar impecable con nuestra gama de productos.</p>
+        </div>
+
+        <div class="category">
+            <h3>Bebidas y Snacks</h3><br><br><br>
+            <div class="productos">
+                <div class="producto"><p class="nada">Oferta</p><br><img src="images/ramitas.png" alt=""><br>Ramitas<br>$1700 (un)<br><br><button class="buy"><a href="html/palta.html">Agregar</a></button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><img src="images/lays.png" alt=""><br>Lays<br>$1900 (un)</s><br><br><button class="buy"><a href="html/">Agregar</a></button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><img src="images/doritos.png" alt=""><br>Doritos<br>$2200 (un)<br><br><button class="buy">Agregar</button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><img src="images/inkacola.png" alt=""><br>Inka Cola<br>$1000 (un)<br><br><button class="buy">Agregar</button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><img src="images/Drpeppers.png" alt=""><br>Dr Peppers<br>$1200 (un)<br><br><button class="buy">Agregar</button></div>
+                <div class="producto"><p class="of">Oferta</p><br><img src="images/burbujin.png" alt=""><br>Burbujin<br>$3500 (un) <s class="gris">$5000</s><br><br><button class="buy">Agregar</button></div>
+            </div>
+            <br><p>Las mejores opciones para cualquier ocasión.</p>
+        </div>
+    </div>
+
+    <script src="JavaScript/footer.js"></script>
+
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Panda Market. Todos los derechos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="#about">Sobre Nosotros</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="/html/Contactanos.html">Contacto</a></li>
+                <li><a href="#privacy">Política de Privacidad</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html><!--Lo Abajo-->
