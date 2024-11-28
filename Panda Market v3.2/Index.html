@@ -1,0 +1,168 @@
+<!--
+    Notas de version; Panda Market v3.2
+    -Mejora de paginas secundarias
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda Market</title> <!--Nombre de la pagina-->
+    <link rel="stylesheet" href="Styles/Style.css"> <!--Conexion con CSS-->
+    <link rel="shortcut icon" href="images/IconoPagina.png"> <!--Imagen de la pagina-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="lineal"> <!--Lo de arriba-->
+        <h1 class="derecha"> 
+            <div>
+                <b>
+                    <p style="white-space: nowrap;">
+                        <span>
+                        <a href="Index.html"><img src="images/pandapro.png" alt="logo" width="80" height="80">Panda Market</a>
+                        <input placeholder="Search" type="search" class="input">
+                        <a href="#" onclick="mostrarCarritoModal()"><img src="images/carroblanco.png" alt="Carrito de compras" width="30" height="30" class="arriba"><span id="cuenta-carrito">0</span></a>
+                        
+                    </p> 
+                </b>
+            </div>
+        </h1>
+    </header>
+
+    
+    
+    <nav> <!--Redireccionar a otras paginas-->
+        <a class="buy2" href="#">Categorias</a>
+        <a class="buy2" href="#" onclick="filtrarOfertas()">Ofertas</a>
+
+        <!--Boton para la ventana emergente con el login. agregar al nav-->
+        <!--Boton-->
+        <div class="boton-modal">
+            <label for="btn-modal">
+                <img src="images/sesionreal.png" alt="" width="35" height="35">
+            </label>
+        </div>
+        <!--Fin de Boton-->
+        <!--Ventana Modal Inicio Sesion-->
+        <input type="checkbox" id="btn-modal">
+        <div class="container-modal">
+            <div class="content-modal">
+                <div class="formulario">
+                    <h1>Inicio de Sesion</h1>
+                    <!-- Aquí se especifica el action para que los datos se envíen al archivo PHP -->
+                    <form method="post" action="login.php">
+                        <div class="username">
+                            <input type="text" name="correo" required>
+                            <label>email</label>
+                        </div>
+                        <div class="username">
+                            <input type="password" name="contra" required>
+                            <label>Contraseña</label>
+                        </div>
+                        <div class="recordar">¿Olvidaste tu contraseña?</div>
+                        <div class="inicio">
+                            <input type="submit" value="Iniciar">
+                        </div>
+                        <div class="registrarse">
+                            <label>¿No tienes cuenta? </label>
+                            <a href="html/registro.html"><input type="button" value="Registrarse"></a>
+                        </div>
+                    </form>
+                </div>
+                <div class="btn-cerrar">
+                    <label for="btn-modal">Cerrar</label>
+                </div>
+            </div>
+            <label for="btn-modal" class="cerrar-modal"></label>
+        </div>
+    </nav>
+
+        <!-- Ventana Modal de Carrito de Compras -->
+    <div id="carritoModal" class="carrito-modal">
+        <div class="carrito-modal-content">
+            <span class="carrito-close" onclick="cerrarCarritoModal()">&times;</span>
+            <h2>Carrito de Compras</h2>
+            <div id="carritoItems"></div> <!-- Aquí se cargarán los elementos del carrito -->
+                <div id="carritoTotal">
+                    <p>Total: <span id="totalCompra">$0</span></p>
+                </div>
+            <button class="btn-carrito" onclick="finalizarCompra()">Finalizar Compra</button>
+        </div>
+    </div>  
+
+
+    <div class="container">
+
+        <!--Carrucel-->
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="images/Anuncio.png" alt="Anuncio 1">
+                <img src="images/Anuncio2.png" alt="Anuncio 2">
+                <img src="images/Anuncio3.png" alt="Anuncio 3">
+                <img src="images/Anuncio4.png" alt="Anuncio 4">
+            </div>
+            <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+        <script src="/JavaScript/carrucel.js"></script>
+
+        <div class="category">
+            <h3>Frutas y Verduras</h3><br><br><br>
+            <div class="productos">
+                <div class="producto"><p class="of">Oferta</p><br><a href="html/palta.html"><img class="producto-imagen" src="images/palta.png" alt=""></a><div class="producto-nombre">Palta</div><div class="producto-precio">$5000(KG)</div> <s class="gris">$6000</s><br><br><button class="buy">Agregar</button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><a href="html/platano.html"><img class="producto-imagen" src="images/platano.png" alt=""></a><div class="producto-nombre">Plátano</div><div class="producto-precio">$2500 (KG)</div><br><br><button class="buy">Agregar</a></button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><a href="html/tomate.html"><img class="producto-imagen" src="images/tomate.png" alt=""></a><div class="producto-nombre">Tomate</div><div class="producto-precio">$2000 (KG)</div><br><br><button class="buy">Agregar</button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><a href="html/manzana.html"><img class="producto-imagen" src="images/manzana.png" alt=""></a><div class="producto-nombre">Manzana</div><div class="producto-precio">$1000 (KG)</div><br><br><button class="buy">Agregar</button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><a href="html/kiwi.html"><img class="producto-imagen" src="images/kiwi.png" alt=""></a><div class="producto-nombre">Kiwi</div><div class="producto-precio">$1500 (KG)</div><br><br><button class="buy">Agregar</button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><a href="html/champiñon.html"><img class="producto-imagen" src="images/zeta.png" alt=""></a><div class="producto-nombre">Champiñón</div><div class="producto-precio">$2450 (KG)</div><br><br><button class="buy">Agregar</button></div>
+            </div>
+            <br><p>Las más frescas, directamente del campo a tu mesa.</p>
+        </div>
+
+        <div class="category">
+            <h3>Productos de limpieza</h3><br><br><br>
+            <div class="productos">
+                <div class="producto"><p class="nada">Oferta</p><br><a href="html/Cif.html"><img class="producto-imagen" src="images/cif.png" alt=""></a> <div class="producto-nombre">Cif</div><div class="producto-precio">$1000 (un)</div><br><br><button class="buy">Agregar</a></button></div>
+                <div class="producto"><p class="of">Oferta</p><br>  <a href="html/confort.html"><img class="producto-imagen" src="images/confort.png" alt=""></a> <div class="producto-nombre">Confort</div><div class="producto-precio">$7650 (8 unidades)</div><s class="gris">$9.000</s><br><br><button class="buy">Agregar</a></button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><a href="html/quix.html"><img class="producto-imagen" src="images/quix.png" alt=""></a> <div class="producto-nombre">Quix</div><div class="producto-precio">$2000 (un)</div> <br><br><button class="buy">Agregar</button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><a href="html/bolsa_basura.html"><img class="producto-imagen" src="images/bolsabasura.png" alt=""></a> <div class="producto-nombre">Bolsa de Basura</div><div class="producto-precio">$1000 (un)</div> <br><br><button class="buy">Agregar</button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><a href="html/lysoform.html"><img class="producto-imagen" src="images/lysoform.png" alt=""></a> <div class="producto-nombre">Lysoform</div><div class="producto-precio">$1500 (un)</div> <br><br><button class="buy">Agregar</button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><a href="html/cloro.html"><img class="producto-imagen" src="images/clorox.png" alt=""></a> <div class="producto-nombre">Cloro</div><div class="producto-precio">$2450 (un)</div> <br><br><button class="buy">Agregar</button></div>
+            </div>
+            <br><p>Mantén tu hogar impecable con nuestra gama de productos.</p>
+        </div>
+
+        <div class="category">
+            <h3>Bebidas y Snacks</h3><br><br><br>
+            <div class="productos">
+                <div class="producto"><p class="nada">Oferta</p><br><a href="html/ramitas.html"><img class="producto-imagen" src="images/ramitas.png" alt=""></a><div class="producto-nombre">Ramitas</div> <div class="producto-precio">$1700 (un)</div> <br><br><button class="buy">Agregar</a></button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><a href="html/lays.html"><img class="producto-imagen" src="images/lays.png" alt=""></a><div class="producto-nombre">Lays</div> <div class="producto-precio">$1900 (un)</div> </s><br><br><button class="buy">Agregar</a></button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><a href="html/doritos.html"><img class="producto-imagen" src="images/doritos.png" alt=""></a><div class="producto-nombre">Doritos</div> <div class="producto-precio">$2200 (un)</div> <br><br><button class="buy">Agregar</button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><a href="html/inka_cola.html"><img class="producto-imagen" src="images/inkacola.png" alt=""></a><div class="producto-nombre">Inka Cola</div> <div class="producto-precio">$1000 (un)</div> <br><br><button class="buy">Agregar</button></div>
+                <div class="producto"><p class="nada">Oferta</p><br><a href="html/dr_peppers.html"><img class="producto-imagen" src="images/Drpeppers.png" alt=""></a><div class="producto-nombre">Dr Peppers</div> <div class="producto-precio">$1200 (un)</div> <br><br><button class="buy">Agregar</button></div>
+                <div class="producto"><p class="of">Oferta</p><br>  <a href="html/burbujin.html"><img class="producto-imagen" src="images/burbujin.png" alt=""></a><div class="producto-nombre">Burbujin</div> <div class="producto-precio">$3500 (un)</div><s class="gris">$5000</s><br><br><button class="buy">Agregar</button></div>
+            </div>
+            <br><p>Las mejores opciones para cualquier ocasión.</p>
+        </div>
+    </div>
+
+    <script src="/JavaScript/footer.js"></script>
+
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Panda Market. Todos los derechos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="/html/sobrenosotros.html">Sobre Nosotros</a></li>
+                <li><a href="/html/Contactanos.html">Contacto</a></li>
+                <li><a href="/html/privacidad.html">Política de Privacidad</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="JavaScript/carro.js"></script>
+    <script src="JavaScript/carga.js"></script>
+    <script src="JavaScript/ofertas.js"></script>
+</body>
+</html><!--Lo Abajo-->

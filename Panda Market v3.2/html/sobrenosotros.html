@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Styles/Style.css">
+    <title>Contactanos</title>
+    <link rel="shortcut icon" href="/images/IconoPagina.png"> <!--Imagen de la pagina-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="lineal"> <!--Lo de arriba-->
+        <h1 class="derecha"> 
+            <div>
+                <b>
+                    <p style="white-space: nowrap;">
+                        <span>
+                        <a href="/Index.html"><img src="/images/pandapro.png" alt="logo" width="80" height="80">Panda Market</a>
+                        <input placeholder="Search" type="search" class="input">
+                        <a href="#" onclick="mostrarCarritoModal()"><img src="/images/carroblanco.png" alt="Carrito de compras" width="30" height="30" class="arriba"><span id="cuenta-carrito">0</span></a>
+                        
+                    </p> 
+                </b>
+            </div>
+        </h1>
+    </header>
+
+    
+    
+    <nav> <!--Redireccionar a otras paginas-->
+        <a class="buy2" href="#">Categorias</a>
+        <a class="buy2" href="#">Ofertas</a>
+
+        <!--Boton para la ventana emergente con el login. agregar al nav-->
+        <!--Boton-->
+        <div class="boton-modal">
+            <label for="btn-modal">
+                <img src="/images/sesionreal.png" alt="" width="35" height="35">
+            </label>
+        </div>
+        <!--Fin de Boton-->
+        <!--Ventana Modal Inicio Sesion-->
+        <input type="checkbox" id="btn-modal">
+        <div class="container-modal">
+            <div class="content-modal">
+                <div class="formulario">
+                    <h1>Inicio de Sesion</h1>
+                    <!-- Aquí se especifica el action para que los datos se envíen al archivo PHP -->
+                    <form method="post" action="/login.php">
+                        <div class="username">
+                            <input type="text" name="correo" required>
+                            <label>email</label>
+                        </div>
+                        <div class="username">
+                            <input type="password" name="contra" required>
+                            <label>Contraseña</label>
+                        </div>
+                        <div class="recordar">¿Olvidaste tu contraseña?</div>
+                        <div class="inicio">
+                            <input type="submit" value="Iniciar">
+                        </div>
+                        <div class="registrarse">
+                            <label>¿No tienes cuenta? </label>
+                            <a href="html/registro.html"><input type="button" value="Registrarse"></a>
+                        </div>
+                    </form>
+                </div>
+                <div class="btn-cerrar">
+                    <label for="btn-modal">Cerrar</label>
+                </div>
+            </div>
+            <label for="btn-modal" class="cerrar-modal"></label>
+        </div>
+    </nav>
+
+        <!-- Ventana Modal de Carrito de Compras -->
+    <div id="carritoModal" class="carrito-modal">
+        <div class="carrito-modal-content">
+            <span class="carrito-close" onclick="cerrarCarritoModal()">&times;</span>
+            <h2>Carrito de Compras</h2>
+            <div id="carritoItems"></div> <!-- Aquí se cargarán los elementos del carrito -->
+                <div id="carritoTotal">
+                    <p>Total: <span id="totalCompra">$0</span></p>
+                </div>
+            <button class="btn-carrito" onclick="finalizarCompra()">Finalizar Compra</button>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+   
+    <!--EDITABLE-->
+    <div class="category">
+    <h1 ><strong>Sobre Nosotros</strong></h1>
+    <p >
+        <br>En <strong>Panda Market</strong>, nos apasiona ofrecer a nuestros clientes una experiencia de compra única y eficiente. Desde nuestros inicios, nos hemos dedicado a combinar productos de alta calidad, precios competitivos y un servicio al cliente excepcional para cubrir todas tus necesidades en un solo lugar. <br><br>
+
+        <strong>Nuestra Misión</strong><br><br>
+        Queremos ser más que un supermercado. Nuestra misión es simplificar tu vida, proporcionándote acceso a productos frescos, sostenibles y asequibles, mientras fomentamos el bienestar de las comunidades y cuidamos del medio ambiente.<br><br>
+
+        <strong>Nuestros Valores</strong><br><br>
+
+        1. <strong>Calidad</strong>: Seleccionamos cuidadosamente nuestros productos para garantizar que siempre tengas lo mejor.<br>
+        2. <strong>Sostenibilidad</strong>: Nos esforzamos por proteger el planeta, utilizando prácticas responsables y apoyando alternativas ecológicas.<br>
+        3. <strong>Compromiso con la comunidad</strong>: Trabajamos mano a mano con productores locales para promover la economía regional y ofrecer productos frescos y auténticos.<br><br>
+        <strong>Nuestra Historia</strong><br><br>
+        En 2024, Panda Market nació con la idea de revolucionar la forma de hacer las compras. Desde entonces, hemos crecido y evolucionado, adaptándonos a las necesidades de nuestros clientes, implementando servicios innovadores como la compra en línea y la entrega a domicilio. Hoy, seguimos enfocados en mantenernos como tu supermercado de confianza.<br><br>
+
+        <strong>¿Por qué elegir Panda Market?</strong><br><br>
+        Porque en Panda Market no solo encuentras los productos que necesitas, sino también un equipo comprometido con brindar soluciones rápidas, confiables y personalizadas para ti y tu familia.
+    </p>
+    <br><br>
+    </div>
+    <!--EDITABLE-->
+
+    <script src="/JavaScript/footer.js"></script>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Panda Market. Todos los derechos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="/html/sobrenosotros.html">Sobre Nosotros</a></li>
+                <li><a href="/html/Contactanos.html">Contacto</a></li>
+                <li><a href="/html/privacidad.html">Política de Privacidad</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="JavaScript/carro.js"></script>
+    <script src="JavaScript/carga.js"></script>
+</body>
+</html>
